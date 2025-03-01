@@ -17,7 +17,7 @@
         </h2>
     
         {{ with .Params.description }}
-        {{ $shortDescription := slicestr . 0 20 }} <!-- 截取前50个字符 -->
+        {{ $shortDescription := slicestr . 0 50 }} <!-- 截取前50个字符 -->
         <h3 class="article-subtitle">
             {{ $shortDescription }}
         </h3>
