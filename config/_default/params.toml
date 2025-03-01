@@ -1,6 +1,6 @@
 # Pages placed under these sections will be shown on homepage and archive page.
 mainSections = ["post"]
-# diarySections = ["diary"]
+diarySections = ["diary"]
 # Output page's full content in RSS.
 rssFullContent = true
 favicon = "favicon.ico"
