@@ -1,0 +1,52 @@
+<script>
+    var pjax = new Pjax({
+    selectors: [
+        "#main-menu",
+        ".article-list",
+        "meta",
+        "head > title",
+        ".right-sidebar",
+        ".main-article",
+        ".search-form",
+        ".section-title",
+        ".archives-group",
+        "body > div > main > header",
+        "body > div > main > section",
+        "body > div > main > div.article-list--compact.links > article > a",
+        "body > div > main > div.giscus" // 需要根据你用的评论插件做调整 否则导致底部评论不被刷新
+    ]
+    })
+
+    pjax._handleResponse = pjax.handleResponse;
+    pjax.handleResponse = function(responseText, request, href, options) {
+        if (request.responseText.match("<html")) {
+            let newDom = new DOMParser().parseFromString(responseText, 'text/html');
+            let bodyClass = newDom.body.className;
+            document.body.setAttribute("class", bodyClass)
+            pjax._handleResponse(responseText, request, href, options);
+        } else {
+
+        }
+    }
+
+    document.addEventListener('pjax:complete', () => {
+        window.Stack.init();
+        // const newTitle = document.querySelector('title').innerText; 
+        // console.log(newTitle)
+        // document.title = newTitle;
+    })
+</script>
+
+<script>
+
+
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") {
+            setTimeout(()=>{
+                NProgress.done();
+            },1500)
+        }
+    });
+</script>
