@@ -18,7 +18,7 @@
     </header>
     <!--$pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections -->
     <!-- 在config/_default/params.toml 里添加日记文章的目录 -->
-    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.diraySections }}
+    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.diarySections }}
     {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
     {{ $filtered := ($pages | intersect $notHidden) }}
 
