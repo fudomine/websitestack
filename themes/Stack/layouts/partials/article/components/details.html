@@ -15,13 +15,6 @@
                 {{- .Title -}}
             </a>
         </h2>
-    
-        {{ with .Params.description }}
-        {{ $shortDescription := slicestr . 0 50 }} <!-- 截取前50个字符 -->
-        <h3 class="article-subtitle">
-            {{ $shortDescription }}
-        </h3>
-        {{ end }}
     </div>
 
     {{ $showReadingTime := .Params.readingTime | default (.Site.Params.article.readingTime) }}
