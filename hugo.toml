@@ -2,3 +2,4 @@ theme = "Stack"
 baseURL = 'https://fudomine.github.io'
 languageCode = 'zh-cn'
 title = '不负耕耘，不负时光'
+

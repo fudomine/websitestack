@@ -5,10 +5,11 @@ description: 本网页聚焦 Markdown 语法样例，专为写作格式查询自
 slug: markdown-tools
 tags: 
     - markdown
-    - html
 categories:
     - Tools
 image: cover.jpg
+weight: 1
+sticky: true
 ---
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
